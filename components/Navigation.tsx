@@ -64,7 +64,6 @@ export default function Navigation() {
           <li><a className="m-link-2" href="#capabilities" onClick={(e) => scrollToHash(e, '#capabilities')}>Services</a></li>
           <li><a className="m-link-2" href="#reviews" onClick={(e) => scrollToHash(e, '#reviews')}>Reviews</a></li>
           <li><a className="m-link-2" href="#method" onClick={(e) => scrollToHash(e, '#method')}>Process</a></li>
-          <li><a className="m-link-2" href="#team" onClick={(e) => scrollToHash(e, '#team')}>Team</a></li>
           <li><a className="m-link-2" href="#pricing" onClick={(e) => scrollToHash(e, '#pricing')}>Pricing</a></li>
           <li><a className="m-link-2" href="#faq" onClick={(e) => scrollToHash(e, '#faq')}>FAQ</a></li>
         </ul>
@@ -108,7 +107,6 @@ export default function Navigation() {
           <li><a href="#capabilities" onClick={(e) => scrollToHash(e, '#capabilities')}>Services<span className="m-dot" aria-hidden="true"></span></a></li>
           <li><a href="#reviews" onClick={(e) => scrollToHash(e, '#reviews')}>Reviews<span className="m-dot" aria-hidden="true"></span></a></li>
           <li><a href="#method" onClick={(e) => scrollToHash(e, '#method')}>Process<span className="m-dot" aria-hidden="true"></span></a></li>
-          <li><a href="#team" onClick={(e) => scrollToHash(e, '#team')}>Team<span className="m-dot" aria-hidden="true"></span></a></li>
           <li><a href="#pricing" onClick={(e) => scrollToHash(e, '#pricing')}>Pricing<span className="m-dot" aria-hidden="true"></span></a></li>
           <li><a href="#faq" onClick={(e) => scrollToHash(e, '#faq')}>FAQ<span className="m-dot" aria-hidden="true"></span></a></li>
           <li><a href="#contact" onClick={(e) => scrollToHash(e, '#contact')}>Contact<span className="m-dot" aria-hidden="true"></span></a></li>

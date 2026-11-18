@@ -6,7 +6,6 @@ import AppsWheel from '@/components/AppsWheel';
 import Capabilities from '@/components/Capabilities';
 import Reviews from '@/components/Reviews';
 import Method from '@/components/Method';
-import Team from '@/components/Team';
 import Pricing from '@/components/Pricing';
 import FAQ from '@/components/FAQ';
 import Contact from '@/components/Contact';
@@ -25,7 +24,6 @@ export default function Home() {
         <AppsWheel />
         <Capabilities />
         <Method />
-        <Team />
         <Reviews />
         <Pricing />
         <FAQ />

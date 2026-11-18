@@ -45,7 +45,6 @@ export default function Footer() {
           <a className="m-link-2" href="#reviews">Reviews (5★)</a>
           <a className="m-link-2" href="#method">Approach</a>
           <a className="m-link-2" href="#pricing">Pricing</a>
-          <a className="m-link-2" href="#team">Team</a>
           <a className="m-link-2" href="#faq">FAQ</a>
         </nav>
         <div className="footer__col">

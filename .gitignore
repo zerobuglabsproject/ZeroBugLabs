@@ -1,6 +1,6 @@
 .DS_Store
 AGENTS.md
-previews/
+/previews/
 
 # Next.js
 node_modules/

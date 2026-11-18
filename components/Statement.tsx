@@ -5,7 +5,6 @@ export default function Statement() {
     { label: 'Services & Development', href: '#capabilities' },
     { label: 'Client reviews (5★)', href: '#reviews' },
     { label: 'Our process', href: '#method' },
-    { label: 'Meet our team', href: '#team' },
     { label: 'Plans & pricing', href: '#pricing' },
     { label: 'Fair questions', href: '#faq' },
     { label: 'Discuss project', href: '#contact' },
