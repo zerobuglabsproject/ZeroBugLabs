@@ -22,8 +22,11 @@ export const QA_DATA = {
       }
     ],
     social: {
+      instagram: "https://www.instagram.com/contact.zerobuglabs/?hl=en",
+      threads: "https://www.threads.com/@contact.zerobuglabs?hl=en",
+      facebook: "https://www.facebook.com/profile.php?id=61596914450357",
+      github: "https://github.com/zerobuglabsproject",
       linkedin: "https://www.linkedin.com/",
-      github: "https://github.com/",
       twitter: "https://x.com/"
     }
   },

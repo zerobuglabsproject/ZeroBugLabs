@@ -56,8 +56,11 @@ export default function Footer() {
         </div>
         <div className="footer__col">
           <p className="m-text-6 footer__label">Follow</p>
-          <a className="m-link-2" href={QA_DATA.agency.social.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a className="m-link-2" href={QA_DATA.agency.social.instagram} target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a className="m-link-2" href={QA_DATA.agency.social.threads} target="_blank" rel="noopener noreferrer">Threads</a>
+          <a className="m-link-2" href={QA_DATA.agency.social.facebook} target="_blank" rel="noopener noreferrer">Facebook</a>
           <a className="m-link-2" href={QA_DATA.agency.social.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a className="m-link-2" href={QA_DATA.agency.social.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a className="m-link-2" href={QA_DATA.agency.social.twitter} target="_blank" rel="noopener noreferrer">Twitter / X</a>
         </div>
         <form className="footer__news" onSubmit={handleNewsSubmit} noValidate>

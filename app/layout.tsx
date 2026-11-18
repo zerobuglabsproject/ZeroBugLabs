@@ -103,6 +103,12 @@ export default function RootLayout({
     description:
       'Full-service web development, mobile app engineering, and software quality assurance agency providing custom web apps, native mobile apps, and automated QA test suites.',
     email: QA_DATA.agency.email,
+    sameAs: [
+      'https://www.instagram.com/contact.zerobuglabs/',
+      'https://www.threads.com/@contact.zerobuglabs',
+      'https://www.facebook.com/profile.php?id=61596914450357',
+      'https://github.com/zerobuglabsproject',
+    ],
     priceRange: '$149 - $1190',
     areaServed: 'Worldwide',
     aggregateRating: {
