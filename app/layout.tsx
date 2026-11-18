@@ -9,15 +9,15 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://qabuglabs.com'),
+  metadataBase: new URL('https://zerobuglabs.com'),
   title: {
-    default: 'QABugLabs — Web & Mobile App Development, QA & Test Automation',
-    template: '%s | QABugLabs',
+    default: 'ZeroBugLabs — Web & Mobile App Development, QA & Test Automation',
+    template: '%s | ZeroBugLabs',
   },
   description:
-    'QABugLabs is an engineering and software QA agency. We build modern responsive websites, native Android & iOS mobile apps, and engineer automated test suites with Selenium, Playwright, and Cypress.',
+    'ZeroBugLabs is an engineering and software QA agency. We build modern responsive websites, native Android & iOS mobile apps, and engineer automated test suites with Selenium, Playwright, and Cypress.',
   keywords: [
-    'QABugLabs',
+    'ZeroBugLabs',
     'software QA agency',
     'web development company',
     'mobile app development',
@@ -36,12 +36,12 @@ export const metadata: Metadata = {
     'QA consulting',
     'bug free software release',
   ],
-  authors: [{ name: 'QABugLabs Team', url: 'https://qabuglabs.com' }],
-  creator: 'QABugLabs',
-  publisher: 'QABugLabs',
+  authors: [{ name: 'ZeroBugLabs Team', url: 'https://zerobuglabs.com' }],
+  creator: 'ZeroBugLabs',
+  publisher: 'ZeroBugLabs',
   category: 'technology',
   alternates: {
-    canonical: 'https://qabuglabs.com',
+    canonical: 'https://zerobuglabs.com',
   },
   icons: {
     icon: '/favicon.svg',
@@ -51,28 +51,28 @@ export const metadata: Metadata = {
   manifest: '/manifest.webmanifest',
   openGraph: {
     type: 'website',
-    url: 'https://qabuglabs.com',
-    title: 'QABugLabs — Web & Mobile App Development, QA & Test Automation',
+    url: 'https://zerobuglabs.com',
+    title: 'ZeroBugLabs — Web & Mobile App Development, QA & Test Automation',
     description:
       'We engineer modern responsive websites, native Android & iOS mobile apps, and help teams build dependable automated test suites and bug-free releases.',
-    siteName: 'QABugLabs',
+    siteName: 'ZeroBugLabs',
     locale: 'en_US',
     images: [
       {
         url: '/previews/desktop.png',
         width: 1200,
         height: 630,
-        alt: 'QABugLabs Web & Mobile App Development, QA & Test Automation Agency',
+        alt: 'ZeroBugLabs Web & Mobile App Development, QA & Test Automation Agency',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'QABugLabs — Web & Mobile App Development, QA & Test Automation',
+    title: 'ZeroBugLabs — Web & Mobile App Development, QA & Test Automation',
     description:
       'We engineer modern responsive websites, native Android & iOS mobile apps, and help teams build dependable automated test suites and bug-free releases.',
     images: ['/previews/desktop.png'],
-    creator: '@qabuglabs',
+    creator: '@zerobuglabs',
   },
   robots: {
     index: true,
@@ -96,10 +96,10 @@ export default function RootLayout({
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
-    name: 'QABugLabs',
-    url: 'https://qabuglabs.com',
-    logo: 'https://qabuglabs.com/favicon.svg',
-    image: 'https://qabuglabs.com/previews/desktop.png',
+    name: 'ZeroBugLabs',
+    url: 'https://zerobuglabs.com',
+    logo: 'https://zerobuglabs.com/favicon.svg',
+    image: 'https://zerobuglabs.com/previews/desktop.png',
     description:
       'Full-service web development, mobile app engineering, and software quality assurance agency providing custom web apps, native mobile apps, and automated QA test suites.',
     email: QA_DATA.agency.email,
@@ -142,8 +142,8 @@ export default function RootLayout({
   const websiteSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'QABugLabs',
-    url: 'https://qabuglabs.com',
+    name: 'ZeroBugLabs',
+    url: 'https://zerobuglabs.com',
   };
 
   return (

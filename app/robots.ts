@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://qabuglabs.com/sitemap.xml',
+    sitemap: 'https://zerobuglabs.com/sitemap.xml',
   };
 }

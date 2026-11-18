@@ -1,8 +1,8 @@
-QABugLabs — Web & Mobile App Development, Software QA & Testing
+ZeroBugLabs — Web & Mobile App Development, Software QA & Testing
 
 Build fast websites & apps. Catch bugs before your users do.
 
-QABugLabs is a web & mobile app development and software quality assurance agency focused on engineering modern, responsive websites, native/cross-platform mobile apps (Android & iOS), and helping engineering teams deliver reliable, user-friendly digital products. From custom web engineering and Google Play store apps to APIs, games, and browser automation, we build and test release-ready software.
+ZeroBugLabs is a web & mobile app development and software quality assurance agency focused on engineering modern, responsive websites, native/cross-platform mobile apps (Android & iOS), and helping engineering teams deliver reliable, user-friendly digital products. From custom web engineering and Google Play store apps to APIs, games, and browser automation, we build and test release-ready software.
 
 Services
 
@@ -34,7 +34,7 @@ Featured Google Play Applications
 
 Client Feedback & 5-Star Reviews
 
-QABugLabs maintains a 5.0 / 5.0 client rating across all launched web platforms, mobile apps, and QA test engineering projects. Authenticated feedback from clients across healthcare, education, gaming, and publishing can be viewed directly on the website.
+ZeroBugLabs maintains a 5.0 / 5.0 client rating across all launched web platforms, mobile apps, and QA test engineering projects. Authenticated feedback from clients across healthcare, education, gaming, and publishing can be viewed directly on the website.
 
 How We Work
 
@@ -64,7 +64,7 @@ Tools are selected according to each project's needs.
 
 Website
 
-This repository contains the QABugLabs agency website, built with Next.js 14 (App Router), React, TypeScript, Lenis Smooth Scroll, and GSAP ScrollTrigger.
+This repository contains the ZeroBugLabs agency website, built with Next.js 14 (App Router), React, TypeScript, Lenis Smooth Scroll, and GSAP ScrollTrigger.
 
 Run Locally
 

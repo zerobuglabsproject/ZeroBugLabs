@@ -7,7 +7,7 @@
 
 export const QA_DATA = {
   agency: {
-    name: "QABugLabs",
+    name: "ZeroBugLabs",
     tagline: "Web & Mobile App Development, Software QA & Test Automation Agency",
     eyebrow: "WEB & MOBILE APP DEVELOPMENT · QA AUTOMATION",
     headline: "Build fast websites & apps. Catch bugs before your users do.",
@@ -127,7 +127,7 @@ export const QA_DATA = {
     conditions: [
       "Displayed prices are starting prices in USD.",
       "Each plan covers only the stated number of projects.",
-      "The customer and QABugLabs agree on scope, access, priorities, and deliverables before testing begins.",
+      "The customer and ZeroBugLabs agree on scope, access, priorities, and deliverables before testing begins.",
       "Monthly plans include weekly progress reports and retesting of reported defects after fixes, subject to the plan's remaining hours.",
       "Unused hours do not roll over.",
       "Automation work is limited by the purchased hours and agreed scope.",
@@ -282,7 +282,7 @@ export const QA_DATA = {
         project: "Healthcare Web Platform & SEO",
         rating: 5,
         badge: "Verified Client",
-        quote: "QABugLabs built our clinic’s website from scratch with exceptional speed and attention to detail. Patient appointment bookings doubled in the first month, and the mobile performance is blazing fast."
+        quote: "ZeroBugLabs built our clinic’s website from scratch with exceptional speed and attention to detail. Patient appointment bookings doubled in the first month, and the mobile performance is blazing fast."
       },
       {
         id: "review-2",
@@ -302,7 +302,7 @@ export const QA_DATA = {
         project: "Mobile App QA & Audio Engine Validation",
         rating: 5,
         badge: "Verified Client",
-        quote: "Audio stream stability and background playback can make or break a story app. QABugLabs identified tricky edge cases in our offline caching and memory pipeline before we launched on Google Play. Truly exceptional work."
+        quote: "Audio stream stability and background playback can make or break a story app. ZeroBugLabs identified tricky edge cases in our offline caching and memory pipeline before we launched on Google Play. Truly exceptional work."
       },
       {
         id: "review-4",
@@ -312,7 +312,7 @@ export const QA_DATA = {
         project: "Chess Master & Game QA",
         rating: 5,
         badge: "Verified Client",
-        quote: "Game mechanics and collision boundaries require obsessive testing. QABugLabs provided deep frame-rate benchmarks and edge-case validation across diverse Android devices. They helped us maintain a 4.8+ Play Store rating."
+        quote: "Game mechanics and collision boundaries require obsessive testing. ZeroBugLabs provided deep frame-rate benchmarks and edge-case validation across diverse Android devices. They helped us maintain a 4.8+ Play Store rating."
       },
       {
         id: "review-5",
@@ -322,7 +322,7 @@ export const QA_DATA = {
         project: "StudyScan Document Scanner App",
         rating: 5,
         badge: "Verified Client",
-        quote: "From camera permissions to real-time PDF edge detection, QABugLabs tested every corner of our student scanner app. Their reproducible bug reports with video logs made fixes effortless."
+        quote: "From camera permissions to real-time PDF edge detection, ZeroBugLabs tested every corner of our student scanner app. Their reproducible bug reports with video logs made fixes effortless."
       },
       {
         id: "review-6",
@@ -332,7 +332,7 @@ export const QA_DATA = {
         project: "SarkariGuide Buddy & Web Portals",
         rating: 5,
         badge: "Verified Client",
-        quote: "Handling sudden traffic surges and instant push notifications during exam announcements used to crash our tables. QABugLabs stress-tested our systems and optimized our front-end for seamless speed."
+        quote: "Handling sudden traffic surges and instant push notifications during exam announcements used to crash our tables. ZeroBugLabs stress-tested our systems and optimized our front-end for seamless speed."
       }
     ]
   },
