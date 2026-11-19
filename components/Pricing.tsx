@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import QA_DATA from '@/data/qa-data';
 
 export default function Pricing() {
@@ -57,7 +58,7 @@ export default function Pricing() {
             <li className="plan-card__item">Clear summary of high, medium, and low issues</li>
             <li className="plan-card__item" style={{ color: 'var(--color-5)' }}>Retesting after fixes is not included in the trial</li>
           </ul>
-          <a className="m-btn plan-card__cta" href="#contact"><span className="m-btn__label">Choose Trial QA ($149)</span></a>
+          <Link className="m-btn plan-card__cta" href="/contact"><span className="m-btn__label">Choose Trial QA ($149)</span></Link>
         </article>
 
         {/* Monthly Basic */}
@@ -84,9 +85,9 @@ export default function Pricing() {
               {isAuto ? 'Automation option: scoped Selenium, Playwright, or Cypress checks' : 'Manual functional & regression checks'}
             </li>
           </ul>
-          <a className="m-btn plan-card__cta" href="#contact">
+          <Link className="m-btn plan-card__cta" href="/contact">
             <span className="m-btn__label">Choose Basic ({isAuto ? '$449' : '$299'})</span>
-          </a>
+          </Link>
         </article>
 
         {/* Monthly Pro (Recommended) */}
@@ -114,9 +115,9 @@ export default function Pricing() {
               {isAuto ? 'Scoped automation development or maintenance (Selenium, Playwright, Cypress)' : 'Manual functional, UI & agreed API tests'}
             </li>
           </ul>
-          <a className="m-btn plan-card__cta" href="#contact">
+          <Link className="m-btn plan-card__cta" href="/contact">
             <span className="m-btn__label">Choose Pro ({isAuto ? '$899' : '$699'})</span>
-          </a>
+          </Link>
         </article>
 
         {/* Monthly Growth */}
@@ -147,9 +148,9 @@ export default function Pricing() {
               {isAuto ? 'Test automation suites using Selenium, Playwright, or Cypress' : 'Full manual QA: functional, UI, API & regression'}
             </li>
           </ul>
-          <a className="m-btn plan-card__cta" href="#contact">
+          <Link className="m-btn plan-card__cta" href="/contact">
             <span className="m-btn__label">Choose Growth ({isAuto ? '$1,699' : '$1,299'})</span>
-          </a>
+          </Link>
         </article>
       </div>
 

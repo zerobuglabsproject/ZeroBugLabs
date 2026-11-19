@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import QA_DATA from '@/data/qa-data';
 
 export default function Footer() {
@@ -24,13 +25,14 @@ export default function Footer() {
       <div className="footer__grid">
         <nav className="footer__col" aria-label="Footer">
           <p className="m-text-6 footer__label">Explore</p>
-          <a className="m-link-2" href="/#work">Work</a>
-          <a className="m-link-2" href="/#again">Applications</a>
-          <a className="m-link-2" href="/#capabilities">Services</a>
-          <a className="m-link-2" href="/#reviews">Reviews (5★)</a>
-          <a className="m-link-2" href="/#method">Approach</a>
-          <a className="m-link-2" href="/#pricing">Pricing</a>
-          <a className="m-link-2" href="/faq">FAQ</a>
+          <Link className="m-link-2" href="/work">Work</Link>
+          <Link className="m-link-2" href="/apps">Applications</Link>
+          <Link className="m-link-2" href="/services">Services</Link>
+          <Link className="m-link-2" href="/reviews">Reviews (5★)</Link>
+          <Link className="m-link-2" href="/process">Approach</Link>
+          <Link className="m-link-2" href="/pricing">Pricing</Link>
+          <Link className="m-link-2" href="/faq">FAQ</Link>
+          <Link className="m-link-2" href="/contact">Contact</Link>
         </nav>
         <div className="footer__col">
           <p className="m-text-6 footer__label">Talk</p>

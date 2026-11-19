@@ -1,4 +1,5 @@
 import QA_DATA from '@/data/qa-data';
+import Link from 'next/link';
 
 export default function Hero() {
   return (
@@ -33,15 +34,15 @@ export default function Hero() {
           {QA_DATA.agency.supportingCopy}
         </p>
         <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '16px', marginTop: '18px' }}>
-          <a className="m-btn" href="#contact">
+          <Link className="m-btn" href="/contact">
             <span className="m-btn__label">Discuss Your Project</span>
-          </a>
-          <a className="m-link hero__link" href="#work">
+          </Link>
+          <Link className="m-link hero__link" href="/work">
             <span className="m-link__label">Explore Our Work</span>
             <svg className="m-link__arrow" viewBox="0 0 16 16" aria-hidden="true">
               <path d="M2 8h11M9 3.5 13.5 8 9 12.5"/>
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
       <h1 className="m-text-2 hero__title" id="hero-title" style={{ '--len': 5 } as React.CSSProperties}>
