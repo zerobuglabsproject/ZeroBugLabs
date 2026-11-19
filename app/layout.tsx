@@ -12,30 +12,32 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://zerobuglabs.com'),
   title: {
-    default: 'ZeroBugLabs — Web & Mobile App Development, QA & Test Automation',
+    default: 'ZeroBugLabs — Web & Mobile App Development & QA Agency | USA & Global',
     template: '%s | ZeroBugLabs',
   },
   description:
-    'ZeroBugLabs is an engineering and software QA agency. We build modern responsive websites, native Android & iOS mobile apps, and engineer automated test suites with Selenium, Playwright, and Cypress.',
+    'ZeroBugLabs is a premier web engineering, mobile app development, and software QA automation agency serving US startups, scale-ups, and product engineering teams. Operating with dedicated US timezone overlap (EST, CST, PST).',
   keywords: [
     'ZeroBugLabs',
-    'software QA agency',
-    'web development company',
-    'mobile app development',
-    'Android app development',
-    'iOS app development',
+    'software QA agency USA',
+    'US web development company',
+    'US mobile app development company',
+    'software testing agency United States',
+    'offshore QA team for US startups',
+    'hire QA engineers US timezone',
+    'React Next.js agency USA',
+    'mobile app testing services USA',
+    'automated software testing USA',
+    'Playwright Cypress QA consultants',
     'QA test automation',
     'Selenium automation',
-    'Playwright testing',
-    'Cypress testing',
     'API testing services',
     'mobile application testing',
     'game QA testing',
     'cross-browser testing',
     'manual functional testing',
-    'software testing agency',
-    'QA consulting',
     'bug free software release',
+    'QA consulting USA',
   ],
   authors: [{ name: 'ZeroBugLabs Team', url: 'https://zerobuglabs.com' }],
   creator: 'ZeroBugLabs',
@@ -43,6 +45,11 @@ export const metadata: Metadata = {
   category: 'technology',
   alternates: {
     canonical: 'https://zerobuglabs.com',
+    languages: {
+      'en-US': 'https://zerobuglabs.com',
+      'en': 'https://zerobuglabs.com',
+      'x-default': 'https://zerobuglabs.com',
+    },
   },
   icons: {
     icon: '/favicon.svg',
@@ -53,9 +60,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://zerobuglabs.com',
-    title: 'ZeroBugLabs — Web & Mobile App Development, QA & Test Automation',
+    title: 'ZeroBugLabs — Web & Mobile App Development & QA Agency | USA & Global',
     description:
-      'We engineer modern responsive websites, native Android & iOS mobile apps, and help teams build dependable automated test suites and bug-free releases.',
+      'Trusted software engineering, mobile app development, and QA test automation partner for US startups and engineering teams. Operating with EST, CST, and PST overlap.',
     siteName: 'ZeroBugLabs',
     locale: 'en_US',
     images: [
@@ -69,11 +76,17 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ZeroBugLabs — Web & Mobile App Development, QA & Test Automation',
+    title: 'ZeroBugLabs — Web & Mobile App Development & QA Agency | USA & Global',
     description:
-      'We engineer modern responsive websites, native Android & iOS mobile apps, and help teams build dependable automated test suites and bug-free releases.',
+      'Trusted software engineering, mobile app development, and QA test automation partner for US startups and engineering teams. Operating with EST, CST, and PST overlap.',
     images: ['/previews/desktop.png'],
     creator: '@zerobuglabs',
+  },
+  other: {
+    'geo.region': 'US',
+    'geo.placename': 'United States',
+    'target-country': 'US',
+    'rating': 'general',
   },
   robots: {
     index: true,
@@ -102,7 +115,7 @@ export default function RootLayout({
     logo: 'https://zerobuglabs.com/favicon.svg',
     image: 'https://zerobuglabs.com/previews/desktop.png',
     description:
-      'Full-service web development, mobile app engineering, and software quality assurance agency providing custom web apps, native mobile apps, and automated QA test suites.',
+      'Premier web development, mobile app engineering, and software quality assurance agency providing custom web apps, native iOS/Android apps, and automated QA test suites for US startups, scale-ups, and product engineering teams.',
     email: QA_DATA.agency.email,
     sameAs: [
       'https://www.instagram.com/contact.zerobuglabs/',
@@ -110,8 +123,24 @@ export default function RootLayout({
       'https://www.facebook.com/profile.php?id=61596914450357',
       'https://github.com/zerobuglabsproject',
     ],
-    priceRange: '$149 - $1190',
-    areaServed: 'Worldwide',
+    currenciesAccepted: 'USD',
+    paymentAccepted: 'Credit Card, Wire Transfer, Stripe, ACH, PayPal',
+    priceRange: '$149 - $1190 USD',
+    areaServed: [
+      {
+        '@type': 'Country',
+        name: 'United States',
+        sameAs: 'https://en.wikipedia.org/wiki/United_States',
+      },
+      {
+        '@type': 'Country',
+        name: 'Worldwide',
+      },
+    ],
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'US',
+    },
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '5.0',
@@ -154,7 +183,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en">
+    <html lang="en-US">
       <head>
         {/* Google Tag Manager */}
         <Script

@@ -47,9 +47,9 @@ export default function Contact() {
           </a>
           <div className="contact__places" style={{ marginTop: '20px' }}>
             <div>
-              <p className="m-text-7" style={{ marginBottom: '6px' }}>Remote Worldwide</p>
+              <p className="m-text-7" style={{ marginBottom: '6px' }}>US &amp; Global Remote</p>
               <p className="m-text" style={{ color: 'color-mix(in srgb, var(--color-2) 80%, transparent)', lineHeight: 1.5 }}>
-                Operating 100% remotely. Collaborating with product and development teams across global time zones.
+                Operating with dedicated US time zone overlap (EST, CST, PST). Collaborating with US startups, engineering leaders, and global product teams.
               </p>
             </div>
           </div>

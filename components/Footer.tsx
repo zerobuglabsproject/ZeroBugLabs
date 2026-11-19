@@ -51,7 +51,7 @@ export default function Footer() {
           <p className="m-text-6 footer__label">Talk</p>
           <a className="m-link-2" href={`mailto:${QA_DATA.agency.email}`}>{QA_DATA.agency.email}</a>
           <span className="m-text-6" style={{ color: 'var(--color-5)', marginTop: '4px', display: 'inline-block' }}>
-            Remote Worldwide
+            US Hours · EST / CST / PST
           </span>
         </div>
         <div className="footer__col">
@@ -97,7 +97,7 @@ export default function Footer() {
       </div>
       <div className="footer__legal m-text-6">
         <p>© 2026 {QA_DATA.agency.name}</p>
-        <p>Remote Worldwide</p>
+        <p>Serving US &amp; Global Teams</p>
       </div>
     </footer>
   );

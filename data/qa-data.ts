@@ -11,13 +11,13 @@ export const QA_DATA = {
     tagline: "Web & Mobile App Development, Software QA & Test Automation Agency",
     eyebrow: "WEB & MOBILE APP DEVELOPMENT · QA AUTOMATION",
     headline: "Build fast websites & apps. Catch bugs before your users do.",
-    supportingCopy: "We design and develop modern responsive websites and high-performance mobile applications (Android & iOS), accompanied by comprehensive manual, API, game, and automated QA test suites.",
+    supportingCopy: "We design and engineer modern responsive websites and high-performance mobile applications (Android & iOS), accompanied by comprehensive manual, API, game, and automated QA test suites. Dedicated US timezone overlap (EST, CST, PST) for American startups and product engineering teams.",
     email: "contact.zerobuglabs@gmail.com", // Official agency email
     offices: [
       {
-        city: "Remote",
-        address: "100% Remote Operations",
-        postal: "Serving Product Teams Globally",
+        city: "United States & Global Remote",
+        address: "Operating across US Timezones (EST, CST, PST)",
+        postal: "Serving US Startups & Global Engineering Teams",
         phone: ""
       }
     ],
@@ -458,6 +458,14 @@ export const QA_DATA = {
     {
       q: "How is custom automation code delivered and owned?",
       a: "Ownership and delivery of custom automation code follow the agreed engagement terms. Scoped automation scripts, configuration files, and documentation can be delivered directly to your organization's code repository."
+    },
+    {
+      q: "Do you work across US time zones (EST, CST, PST)?",
+      a: "Yes. Our engineering and QA teams provide dedicated overlap during standard US business hours across Eastern (EST), Central (CST), Mountain (MST), and Pacific (PST) time zones. We integrate directly into your team's daily standups, Slack, Jira, GitHub, or Linear workflows."
+    },
+    {
+      q: "How do US companies contract and pay for ZeroBugLabs services?",
+      a: "All our plans and quotes are priced in USD ($) with transparent flat-rate pricing. We accept payments via Stripe, Credit Card, Wire Transfer, and ACH with standard invoices for easy accounting and zero international payment hurdles."
     }
   ]
 };
