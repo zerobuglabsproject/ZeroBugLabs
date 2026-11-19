@@ -20,7 +20,10 @@ export default function Navigation() {
     e.preventDefault();
     setIsMenuOpen(false);
     const target = document.querySelector(hash);
-    if (!target) return;
+    if (!target) {
+      window.location.href = `/${hash}`;
+      return;
+    }
 
     if (typeof window !== 'undefined' && window.location.hash) {
       window.history.replaceState(null, '', window.location.pathname + window.location.search);

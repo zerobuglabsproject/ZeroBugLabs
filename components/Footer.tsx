@@ -24,13 +24,13 @@ export default function Footer() {
       <div className="footer__grid">
         <nav className="footer__col" aria-label="Footer">
           <p className="m-text-6 footer__label">Explore</p>
-          <a className="m-link-2" href="#work">Work</a>
-          <a className="m-link-2" href="#again">Applications</a>
-          <a className="m-link-2" href="#capabilities">Services</a>
-          <a className="m-link-2" href="#reviews">Reviews (5★)</a>
-          <a className="m-link-2" href="#method">Approach</a>
-          <a className="m-link-2" href="#pricing">Pricing</a>
-          <a className="m-link-2" href="#faq">FAQ</a>
+          <a className="m-link-2" href="/#work">Work</a>
+          <a className="m-link-2" href="/#again">Applications</a>
+          <a className="m-link-2" href="/#capabilities">Services</a>
+          <a className="m-link-2" href="/#reviews">Reviews (5★)</a>
+          <a className="m-link-2" href="/#method">Approach</a>
+          <a className="m-link-2" href="/#pricing">Pricing</a>
+          <a className="m-link-2" href="/faq">FAQ</a>
         </nav>
         <div className="footer__col">
           <p className="m-text-6 footer__label">Talk</p>
