@@ -222,7 +222,53 @@ export default function SmoothScroll() {
       };
     });
 
+    if (window.location.hash) {
+      window.history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement)?.closest('a');
+      if (!target) return;
+      const href = target.getAttribute('href');
+      if (!href || !href.startsWith('#') || href === '#') return;
+
+      const element = document.querySelector(href);
+      if (!element) return;
+
+      e.preventDefault();
+
+      if (window.location.hash) {
+        window.history.replaceState(null, '', window.location.pathname + window.location.search);
+      }
+
+      const nav = document.getElementById('navigation');
+      const navOffset = nav ? nav.offsetHeight : 0;
+
+      // @ts-ignore
+      if (window.lenis && typeof window.lenis.scrollTo === 'function') {
+        // @ts-ignore
+        window.lenis.start();
+        // @ts-ignore
+        window.lenis.scrollTo(element, { offset: -navOffset, duration: 1.2 });
+      } else {
+        const targetY = element.getBoundingClientRect().top + window.scrollY - navOffset;
+        window.scrollTo({ top: targetY, behavior: 'smooth' });
+      }
+
+      if (href === '#contact') {
+        setTimeout(() => {
+          const firstInput = element.querySelector<HTMLInputElement>('input[name="name"]');
+          if (firstInput && document.activeElement !== firstInput) {
+            firstInput.focus({ preventScroll: true });
+          }
+        }, 1200);
+      }
+    };
+
+    document.addEventListener('click', handleAnchorClick);
+
     return () => {
+      document.removeEventListener('click', handleAnchorClick);
       ctx.revert();
       lenis.destroy();
       // @ts-ignore

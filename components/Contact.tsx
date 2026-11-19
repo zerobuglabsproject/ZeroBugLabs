@@ -8,27 +8,78 @@ export default function Contact() {
     type: 'idle',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
-    const name = (form.elements.namedItem('name') as HTMLInputElement)?.value;
-    const email = (form.elements.namedItem('email') as HTMLInputElement)?.value;
-    const message = (form.elements.namedItem('message') as HTMLTextAreaElement)?.value;
+    const formData = new FormData(form);
+
+    const name = (formData.get('name') as string)?.trim();
+    const email = (formData.get('email') as string)?.trim();
+    const company = (formData.get('company') as string)?.trim() || 'N/A';
+    const topic = (formData.get('topic') as string) || 'Discuss Project';
+    const appType = (formData.get('app_type') as string) || 'Custom Website';
+    const framework = (formData.get('framework') as string) || 'Modern Web';
+    const scope = (formData.get('scope') as string) || 'One-Time Trial';
+    const message = (formData.get('message') as string)?.trim();
 
     if (!name || !email || !message || !email.includes('@')) {
       setStatus({
         type: 'error',
-        message: 'Please add your name, a valid email and a few words about your testing needs.'
+        message: 'Please provide your name, a valid email, and details about your project needs.'
       });
       return;
     }
 
-    setStatus({
-      type: 'success',
-      message: 'Thank you! We have received your inquiry and will reply within two working days.'
-    });
-    form.reset();
+    setIsSubmitting(true);
+    setStatus({ type: 'idle', message: '' });
+
+    try {
+      const endpoint = QA_DATA.formConfig.formspreeEndpoint || `https://formsubmit.co/ajax/${QA_DATA.agency.email}`;
+
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          'Full Name': name,
+          'Work Email': email,
+          'Company or Product': company,
+          'What Can We Help With': topic,
+          'Application Type': appType,
+          'Preferred Framework / Tech': framework,
+          'Expected Scope & Timeline': scope,
+          'Project Details & Goals': message,
+          _subject: `New Inquiry from ${name}${company !== 'N/A' ? ` (${company})` : ''} - ZeroBugLabs`,
+          _replyto: email,
+          _captcha: 'false',
+          _template: 'table'
+        })
+      });
+
+      const data = await response.json().catch(() => null);
+
+      if (response.ok && (data?.success === 'true' || data?.success === true || response.status === 200)) {
+        setStatus({
+          type: 'success',
+          message: 'Thank you! Your message has been sent successfully. We will review your inquiry and reply within two business days.'
+        });
+        form.reset();
+      } else {
+        throw new Error(data?.message || 'Submission failed');
+      }
+    } catch (error) {
+      console.error('Contact form submission error:', error);
+      setStatus({
+        type: 'error',
+        message: `There was an issue sending your inquiry. Please email us directly at ${QA_DATA.agency.email}.`
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -56,6 +107,7 @@ export default function Contact() {
         </div>
 
         <form className="contact__form" onSubmit={handleSubmit} noValidate>
+          <input type="text" name="_honey" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
           <div className="contact__pair">
             <label className="m-text-6">
               Full name
@@ -132,8 +184,8 @@ export default function Contact() {
             />
           </label>
           <div className="contact__actions">
-            <button className="m-btn" type="submit">
-              <span className="m-btn__label">Send message</span>
+            <button className="m-btn" type="submit" disabled={isSubmitting}>
+              <span className="m-btn__label">{isSubmitting ? 'Sending...' : 'Send message'}</span>
             </button>
             {status.message && (
               <p 

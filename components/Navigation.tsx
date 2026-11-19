@@ -22,10 +22,8 @@ export default function Navigation() {
     const target = document.querySelector(hash);
     if (!target) return;
 
-    if (typeof window !== 'undefined' && window.history && window.history.pushState) {
-      window.history.pushState(null, '', hash);
-    } else {
-      window.location.hash = hash;
+    if (typeof window !== 'undefined' && window.location.hash) {
+      window.history.replaceState(null, '', window.location.pathname + window.location.search);
     }
 
     const nav = document.getElementById('navigation');

@@ -584,6 +584,12 @@ textarea.m-field { min-height: 112px; resize: vertical; }
   transform: translateY(-2px);
   box-shadow: 0 8px 26px color-mix(in srgb, var(--color-3) 60%, transparent);
 }
+#contact .contact__form .m-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
 #contact .contact__pair { display: grid; gap: 18px; }
 #contact .contact__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; padding-top: 6px; }
 #contact .contact__status { font-weight: 600; font-size: 14px; }
@@ -609,8 +615,7 @@ textarea.m-field { min-height: 112px; resize: vertical; }
 #footer .footer__legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; margin-top: 56px; color: var(--color-5); }
 @media (min-width: 900px) {
   #footer .footer__bye { font-size: min(24vw, 40svh); }
-  #footer .footer__grid { grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(0, 2fr); }
-  #footer .footer__news { grid-column: auto; }
+  #footer .footer__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (prefers-reduced-motion: no-preference) {
   #footer .footer__img { animation: footer-turn 46s linear infinite; }

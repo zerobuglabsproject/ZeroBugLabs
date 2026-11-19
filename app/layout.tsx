@@ -121,7 +121,6 @@ export default function RootLayout({
       'https://www.instagram.com/contact.zerobuglabs/',
       'https://www.threads.com/@contact.zerobuglabs',
       'https://www.facebook.com/profile.php?id=61596914450357',
-      'https://github.com/zerobuglabsproject',
     ],
     currenciesAccepted: 'USD',
     paymentAccepted: 'Credit Card, Wire Transfer, Stripe, ACH, PayPal',
