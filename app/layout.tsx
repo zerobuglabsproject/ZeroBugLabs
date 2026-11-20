@@ -52,9 +52,17 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: '/favicon.svg',
-    shortcut: '/favicon.svg',
-    apple: '/favicon.svg',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
   },
   manifest: '/manifest.webmanifest',
   openGraph: {
@@ -112,8 +120,8 @@ export default function RootLayout({
     '@type': 'ProfessionalService',
     name: 'ZeroBugLabs',
     url: 'https://zerobuglabs.com',
-    logo: 'https://zerobuglabs.com/favicon.svg',
-    image: 'https://zerobuglabs.com/previews/desktop.png',
+    logo: 'https://zerobuglabs.com/logo.png',
+    image: 'https://zerobuglabs.com/logo.png',
     description:
       'Premier web development, mobile app engineering, and software quality assurance agency providing custom web apps, native iOS/Android apps, and automated QA test suites for US startups, scale-ups, and product engineering teams.',
     email: QA_DATA.agency.email,

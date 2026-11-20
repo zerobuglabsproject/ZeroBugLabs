@@ -19,8 +19,21 @@ export default function Navigation() {
 
   return (
     <header id="navigation" className="nav" data-8b-section="navigation">
-      <Link className="nav__brand" href="/" aria-label={`${QA_DATA.agency.name}, back to homepage`}>
-        {QA_DATA.agency.name}<span className="m-dot" aria-hidden="true"></span>
+      <Link className="nav__brand" href="/" aria-label={`${QA_DATA.agency.name}, back to homepage`} style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', paddingTop: 0 }}>
+        <img
+          src="/icon-192.png"
+          alt="ZeroBugLabs Logo"
+          width={30}
+          height={30}
+          style={{
+            borderRadius: '50%',
+            objectFit: 'cover',
+            boxShadow: '0 0 10px rgba(0, 212, 255, 0.45)',
+            display: 'block'
+          }}
+        />
+        <span>{QA_DATA.agency.name}</span>
+        <span className="m-dot" aria-hidden="true" style={{ alignSelf: 'baseline' }}></span>
       </Link>
       <nav className="nav__links" aria-label="Main">
         <ul>
