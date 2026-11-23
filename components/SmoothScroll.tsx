@@ -223,7 +223,24 @@ export default function SmoothScroll() {
     });
 
     if (window.location.hash) {
-      window.history.replaceState(null, '', window.location.pathname + window.location.search);
+      const initialHash = window.location.hash;
+      const initialTarget = document.querySelector(initialHash);
+      if (initialTarget) {
+        setTimeout(() => {
+          const nav = document.getElementById('navigation');
+          const navOffset = nav ? nav.offsetHeight : 0;
+          // @ts-ignore
+          if (window.lenis && typeof window.lenis.scrollTo === 'function') {
+            // @ts-ignore
+            window.lenis.start();
+            // @ts-ignore
+            window.lenis.scrollTo(initialTarget, { offset: -navOffset, duration: 1.2 });
+          } else {
+            const targetY = initialTarget.getBoundingClientRect().top + window.scrollY - navOffset;
+            window.scrollTo({ top: targetY, behavior: 'smooth' });
+          }
+        }, 400);
+      }
     }
 
     const handleAnchorClick = (e: MouseEvent) => {
