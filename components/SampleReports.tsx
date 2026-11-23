@@ -51,7 +51,7 @@ export default function SampleReports() {
   }, []);
 
   const handleView = (report: ReportItem) => {
-    // On mobile devices, native iframe PDF embedding often fails or is cramped; open directly in a new tab
+    // On mobile devices, native iframe PDF embedding often fails; open directly in a new tab
     if (typeof window !== 'undefined' && window.innerWidth < 768) {
       window.open(report.file, '_blank', 'noopener,noreferrer');
       return;
@@ -97,31 +97,28 @@ export default function SampleReports() {
         <div className="reports-grid">
           {REPORTS.map((report) => (
             <article key={report.id} className="report-card" aria-label={report.title}>
-              {/* Thumbnail Container */}
-              <div className="report-thumb-wrap">
+              {/* Thumbnail Container (Click to view without any intrusive popup) */}
+              <div 
+                className="report-thumb-wrap" 
+                onClick={() => handleView(report)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    handleView(report);
+                  }
+                }}
+                aria-label={`Open ${report.title}`}
+              >
                 <img
                   src={report.thumbnail}
                   alt={report.thumbAlt}
                   loading="lazy"
                   className="report-thumb"
-                  width={900}
-                  height={506}
+                  width={1024}
+                  height={715}
                 />
-                <div className="report-thumb-overlay" aria-hidden="true">
-                  <button
-                    type="button"
-                    className="report-thumb-preview-btn"
-                    onClick={() => handleView(report)}
-                    aria-label={`Preview ${report.title}`}
-                    tabIndex={-1}
-                  >
-                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                      <circle cx="12" cy="12" r="3" />
-                    </svg>
-                    <span>Quick Preview</span>
-                  </button>
-                </div>
               </div>
 
               {/* Card Content */}
@@ -153,7 +150,18 @@ export default function SampleReports() {
                   ))}
                 </div>
 
-                {/* Buttons */}
+                {/* Optional Note (Placed above actions so buttons always align at bottom) */}
+                {report.note && (
+                  <div className="report-card-note">
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style={{ flexShrink: 0, color: '#10B981', opacity: 0.9 }}>
+                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                      <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                    </svg>
+                    <span>{report.note}</span>
+                  </div>
+                )}
+
+                {/* Buttons (Pinned cleanly to bottom) */}
                 <div className="report-card-actions">
                   <button
                     type="button"
@@ -182,17 +190,6 @@ export default function SampleReports() {
                     <span>Download PDF</span>
                   </a>
                 </div>
-
-                {/* Optional note under card */}
-                {report.note && (
-                  <p className="report-card-note">
-                    <svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style={{ flexShrink: 0, opacity: 0.8 }}>
-                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                      <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
-                    </svg>
-                    <span>{report.note}</span>
-                  </p>
-                )}
               </div>
             </article>
           ))}
@@ -363,6 +360,7 @@ export default function SampleReports() {
           grid-template-columns: repeat(2, 1fr);
           gap: clamp(24px, 3.5vw, 40px);
           margin-bottom: clamp(48px, 7vw, 72px);
+          align-items: stretch;
         }
 
         .report-card {
@@ -387,59 +385,25 @@ export default function SampleReports() {
 
         .report-thumb-wrap {
           position: relative;
-          background: #060b14;
+          background: #0A1220;
           overflow: hidden;
-          aspect-ratio: 16 / 9;
+          aspect-ratio: 16 / 9.5;
           border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+          cursor: pointer;
         }
 
         .report-thumb {
           width: 100%;
           height: 100%;
           object-fit: cover;
+          object-position: top center;
           display: block;
-          transition: transform 0.35s ease;
+          transition: transform 0.35s ease, filter 0.35s ease;
         }
 
-        .report-card:hover .report-thumb {
+        .report-thumb-wrap:hover .report-thumb {
           transform: scale(1.02);
-        }
-
-        .report-thumb-overlay {
-          position: absolute;
-          inset: 0;
-          background: rgba(10, 17, 31, 0.6);
-          backdrop-filter: blur(2px);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          opacity: 0;
-          transition: opacity 0.25s ease;
-        }
-
-        .report-card:hover .report-thumb-overlay {
-          opacity: 1;
-        }
-
-        .report-thumb-preview-btn {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          background: #10B981;
-          color: #0A111F;
-          font-weight: 700;
-          font-size: 13px;
-          padding: 10px 18px;
-          border-radius: 999px;
-          border: none;
-          cursor: pointer;
-          box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
-          transform: translateY(6px);
-          transition: transform 0.25s ease;
-        }
-
-        .report-card:hover .report-thumb-preview-btn {
-          transform: translateY(0);
+          filter: brightness(1.04);
         }
 
         .report-card-body {
@@ -490,8 +454,7 @@ export default function SampleReports() {
           display: flex;
           flex-wrap: wrap;
           gap: 8px;
-          margin-bottom: 24px;
-          margin-top: auto;
+          margin-bottom: 18px;
         }
 
         .report-highlight-badge {
@@ -507,10 +470,26 @@ export default function SampleReports() {
           font-weight: 500;
         }
 
+        .report-card-note {
+          font-family: var(--font-2);
+          font-size: 12px;
+          line-height: 1.5;
+          color: #94A3B8;
+          background: rgba(255, 255, 255, 0.03);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 8px;
+          padding: 8px 12px;
+          margin-bottom: 20px;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+
         .report-card-actions {
           display: flex;
           gap: 12px;
           flex-wrap: wrap;
+          margin-top: auto;
         }
 
         .report-btn-primary {
@@ -570,17 +549,6 @@ export default function SampleReports() {
         .report-btn-secondary:focus-visible {
           outline: 2px solid #10B981;
           outline-offset: 3px;
-        }
-
-        .report-card-note {
-          font-family: var(--font-2);
-          font-size: 12px;
-          line-height: 1.5;
-          color: #64748B;
-          margin: 14px 0 0;
-          display: flex;
-          align-items: center;
-          gap: 6px;
         }
 
         /* CTA Banner */
