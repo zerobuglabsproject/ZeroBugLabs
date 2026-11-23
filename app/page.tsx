@@ -2,6 +2,7 @@ import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import Statement from '@/components/Statement';
 import Work from '@/components/Work';
+import SampleReports from '@/components/SampleReports';
 import AppsWheel from '@/components/AppsWheel';
 import Capabilities from '@/components/Capabilities';
 import Reviews from '@/components/Reviews';
@@ -21,6 +22,7 @@ export default function Home() {
         <Hero />
         <Statement />
         <Work />
+        <SampleReports />
         <AppsWheel />
         <Capabilities />
         <Method />

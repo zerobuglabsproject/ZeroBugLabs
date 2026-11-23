@@ -38,6 +38,7 @@ export default function Navigation() {
       <nav className="nav__links" aria-label="Main">
         <ul>
           <li><Link className="m-link-2" href="/work">Work</Link></li>
+          <li><Link className="m-link-2" href="/#reports">Sample Reports</Link></li>
           <li><Link className="m-link-2" href="/apps">Apps</Link></li>
           <li><Link className="m-link-2" href="/services">Services</Link></li>
           <li><Link className="m-link-2" href="/reviews">Reviews</Link></li>
@@ -81,6 +82,7 @@ export default function Navigation() {
         </div>
         <ul className="menu__list">
           <li><Link href="/work" onClick={() => setIsMenuOpen(false)}>Work<span className="m-dot" aria-hidden="true"></span></Link></li>
+          <li><Link href="/#reports" onClick={() => setIsMenuOpen(false)}>Sample Reports<span className="m-dot" aria-hidden="true"></span></Link></li>
           <li><Link href="/apps" onClick={() => setIsMenuOpen(false)}>Apps<span className="m-dot" aria-hidden="true"></span></Link></li>
           <li><Link href="/services" onClick={() => setIsMenuOpen(false)}>Services<span className="m-dot" aria-hidden="true"></span></Link></li>
           <li><Link href="/reviews" onClick={() => setIsMenuOpen(false)}>Reviews<span className="m-dot" aria-hidden="true"></span></Link></li>

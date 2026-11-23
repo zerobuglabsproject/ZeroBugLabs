@@ -26,6 +26,7 @@ export default function Footer() {
         <nav className="footer__col" aria-label="Footer">
           <p className="m-text-6 footer__label">Explore</p>
           <Link className="m-link-2" href="/work">Work</Link>
+          <Link className="m-link-2" href="/#reports">Sample Reports</Link>
           <Link className="m-link-2" href="/apps">Applications</Link>
           <Link className="m-link-2" href="/services">Services</Link>
           <Link className="m-link-2" href="/reviews">Reviews (5★)</Link>

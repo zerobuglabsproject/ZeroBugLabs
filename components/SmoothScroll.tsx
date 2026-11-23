@@ -230,9 +230,16 @@ export default function SmoothScroll() {
       const target = (e.target as HTMLElement)?.closest('a');
       if (!target) return;
       const href = target.getAttribute('href');
-      if (!href || !href.startsWith('#') || href === '#') return;
+      if (!href) return;
 
-      const element = document.querySelector(href);
+      const isHome = window.location.pathname === '/' || window.location.pathname === '';
+      const isAnchor = href.startsWith('#') || (isHome && href.startsWith('/#'));
+      if (!isAnchor) return;
+
+      const hash = href.startsWith('/#') ? href.substring(1) : href;
+      if (hash === '#') return;
+
+      const element = document.querySelector(hash);
       if (!element) return;
 
       e.preventDefault();
@@ -255,7 +262,7 @@ export default function SmoothScroll() {
         window.scrollTo({ top: targetY, behavior: 'smooth' });
       }
 
-      if (href === '#contact') {
+      if (hash === '#contact') {
         setTimeout(() => {
           const firstInput = element.querySelector<HTMLInputElement>('input[name="name"]');
           if (firstInput && document.activeElement !== firstInput) {
