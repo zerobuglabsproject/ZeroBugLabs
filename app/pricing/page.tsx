@@ -82,55 +82,6 @@ export default function PricingPage() {
       <a className="skip" href="#main">Skip to content</a>
       <Navigation />
       <main id="main">
-        {/* Pricing Dedicated Hero */}
-        <section
-          style={{
-            padding: 'clamp(120px, 16vh, 180px) var(--space-1) clamp(30px, 5vh, 60px)',
-            background: 'var(--color-2)',
-            borderBottom: '1px solid color-mix(in srgb, var(--color-1) 12%, transparent)',
-          }}
-        >
-          <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-            <nav aria-label="Breadcrumb" style={{ marginBottom: '24px' }}>
-              <ol style={{ display: 'flex', alignItems: 'center', gap: '8px', listStyle: 'none', padding: 0 }}>
-                <li>
-                  <Link href="/" className="m-link-2" style={{ fontSize: '14px', color: 'var(--color-5)' }}>
-                    Home
-                  </Link>
-                </li>
-                <li style={{ color: 'var(--color-5)', fontSize: '14px' }}>/</li>
-                <li style={{ fontSize: '14px', color: 'var(--color-3)', fontWeight: 600 }}>Pricing</li>
-              </ol>
-            </nav>
-
-            <span
-              className="m-badge"
-              style={{
-                display: 'inline-block',
-                marginBottom: '16px',
-                background: 'color-mix(in srgb, var(--color-3) 14%, transparent)',
-                color: 'var(--color-3)',
-                padding: '6px 14px',
-                borderRadius: '999px',
-                fontWeight: 600,
-                fontSize: '13px',
-                letterSpacing: '0.04em',
-                textTransform: 'uppercase',
-              }}
-            >
-              Predictable Flat-Rate Pricing
-            </span>
-
-            <h1 className="m-text-3" style={{ maxWidth: '900px', marginBottom: '24px' }}>
-              Simple pricing.<br />No hidden fees<span className="m-dot" aria-hidden="true"></span>
-            </h1>
-
-            <p className="m-text-5" style={{ maxWidth: '720px', color: 'var(--color-5)' }}>
-              Transparent starting rates in USD. Whether you need a quick $149 audit to test our quality or a dedicated monthly QA team with US timezone overlap, we have a plan built for you.
-            </p>
-          </div>
-        </section>
-
         {/* Pricing Table Component */}
         <Pricing />
 
