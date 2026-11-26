@@ -54,6 +54,7 @@ export default function PricingPage() {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: 'Software QA Testing & Test Automation Retainer',
+    image: 'https://zerobuglabs.com/logo.png',
     description:
       'Manual, API, mobile, and automated testing services (Selenium, Playwright, Cypress) for US startups and engineering teams.',
     brand: {
@@ -67,6 +68,27 @@ export default function PricingPage() {
       highPrice: '1699',
       offerCount: '4',
     },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5.0',
+      reviewCount: String(QA_DATA.reviews.items.length),
+      bestRating: '5',
+      worstRating: '1',
+    },
+    review: QA_DATA.reviews.items.map((rev) => ({
+      '@type': 'Review',
+      author: {
+        '@type': 'Person',
+        name: rev.name,
+      },
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: String(rev.rating),
+        bestRating: '5',
+        worstRating: '1',
+      },
+      reviewBody: rev.quote,
+    })),
   };
 
   return (
