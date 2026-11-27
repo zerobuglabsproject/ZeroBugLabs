@@ -67,31 +67,25 @@ export default function Contact() {
 
       const data = await response.json().catch(() => null);
 
-      if (response.ok && (data?.success === 'true' || data?.success === true || response.status === 200)) {
+      const isConfirmedSuccess =
+        response.ok &&
+        (data?.success === 'true' || data?.success === true || data?.ok === true);
+
+      if (isConfirmedSuccess) {
         setStatus({
           type: 'success',
           message: 'Thank you! Your message has been sent successfully. We will review your inquiry and reply within two business days.'
         });
 
-        // Trigger GA4 Conversion Event with Project & Lead details
-        if (typeof window !== 'undefined') {
-          if (typeof (window as any).gtag === 'function') {
-            (window as any).gtag('event', 'generate_lead', {
-              event_category: 'Lead Inquiry',
-              event_label: topic,
-              project_type: topic,
-              app_type: appType,
-              scope: scope
-            });
-          }
-          if (Array.isArray((window as any).dataLayer)) {
-            (window as any).dataLayer.push({
-              event: 'generate_lead',
-              project_type: topic,
-              app_type: appType,
-              scope: scope
-            });
-          }
+        // Trigger GA4 Conversion Event once via direct gtag.js after backend confirmation
+        if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+          (window as any).gtag('event', 'generate_lead', {
+            event_category: 'Lead Inquiry',
+            event_label: topic,
+            project_type: topic,
+            app_type: appType,
+            scope: scope
+          });
         }
 
         form.reset();
