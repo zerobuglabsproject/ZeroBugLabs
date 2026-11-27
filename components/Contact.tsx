@@ -295,6 +295,7 @@ export default function Contact() {
                 <option value="Monthly Basic Plan">Monthly Basic Plan ($299 / $449)</option>
                 <option value="Monthly Pro Plan">Monthly Pro Plan ($699 / $899)</option>
                 <option value="Monthly Growth Plan">Monthly Growth Plan ($1,299 / $1,699)</option>
+                <option value="Dedicated QA Partnership (3 Months – Custom Quote)">Dedicated QA Partnership (3 Months – Custom Quote)</option>
                 <option value="Game Testing & Mechanics">Game Testing &amp; Mechanics Validation</option>
               </select>
             </label>
@@ -330,6 +331,7 @@ export default function Contact() {
               <select className="m-field" name="scope" defaultValue="One-Time Trial">
                 <option value="One-Time Trial">One-Time Trial Assessment</option>
                 <option value="Ongoing Monthly QA">Ongoing Monthly QA &amp; Regression</option>
+                <option value="Dedicated QA Partnership (3 Months)">3 Months Dedicated QA Partnership</option>
                 <option value="Pre-launch Sprint">Pre-launch Regression Sprint</option>
                 <option value="Test Automation">Test Automation Implementation</option>
               </select>
